@@ -714,17 +714,9 @@ const closeModal = () => {
 este código é responsável por ativar a exibição da janela modal.
 
 Agora iremos repassar os dados do JSON para o localstorage, vamos utilizar a segunte linha lógica, os dados informados no form do campo modal, serão passado para um JSON e enviados para o localstorage.
+
 adicione o codigo a seguir logo abaixo do código anterior:
 ````
-'use strict'
-//const para ativar modal
-const openModal = () => document.getElementById('modal')
-    .classList.add('active')
-
-const closeModal = () => {
-    clearFields()
-    document.getElementById('modal').classList.remove('active')
-}
 
 // repassa dados JSON para localstorage 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_clientdentaltio')) ?? []
@@ -869,7 +861,6 @@ document.querySelector('#tableClient>tbody')
 
 document.getElementById('cancelar')
     .addEventListener('click', closeModal)
-
 
 ````
 
