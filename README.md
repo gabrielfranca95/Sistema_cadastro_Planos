@@ -298,5 +298,231 @@ button.red{
 }
 ````
 
+Note as classes dos botões que chamamos no html que acabamos de criar para que os mesmos possam herdar as dimensões.
+agora iremos adicionar as configurações mobile:
+````
+/*comportamento dos botões em telas pequenas*/
+@media(max-width:480px){
+    .button.mobile{
+        color:transparent;
+        font-size:0;
+        width:90%;
+        height:40px;
+        border-radius: 16px;
+        position:relative;
+        top: 15vh;
+        left: 5vw;
+    }
+    .button.mobile::before{
+        content: "cadastrar";
+        color:white;
+        font-size:1rem;
+        width:100%;
+        height:100%;
+    }
+}
+````
+
+### criando modal.css 
+dentro da pasta css crie um arquivo chamado de `modal.css` e adicione o seguinte código:
+````
+.modal{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #00000090;
+    opacity: 0;
+    z-index: -1;
+}
+
+.modal.active{
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal-content{
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:80px;
+    width: 90vw;
+    margin: 15vh auto;
+    padding-bottom: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(77, 109, 158);
+}
+
+.modal-header{
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 60px;
+    line-height: 40px;
+    font-size: 1rem;
+}
+
+
+
+.modal-close{
+    position: absolute;
+    padding: 10px;
+    right: 0;
+    display: block;
+    width: 60px;
+    height: 0px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+
+.modal-form{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+/*Altere o tamnho dos campos input, formato entre outros atraves do modal-field*/
+.modal-field{
+    width: calc(100% - 10px);
+    height: 40px;
+    outline-style: none;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 0 0 2px black;
+    padding: 0 10px;
+    font-size:1rem;
+}
+
+.modal-field:focus{
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
+
+.modal-footer{
+    background-color: inherit;
+    text-align: right;
+    padding: 0 20px;
+}
+
+/*configuração para telas pequenas*/
+@media (max-width:480px){
+    .modal{
+        top:100%;
+        transition: all 0.3s ease;
+    }
+    .modal.active{
+        top:0;
+    }
+    .modal-content{
+        margin:0;
+        width:100%;
+        position:fixed;
+    }
+    .modal-field{
+        width:100%;
+    }
+}
+
+````
+Note que criamos todas as configurações para o modal referênciadas antes no `dentaltio.html`, adicionei alguns comentários para facilitar a compreenção e alterações futuras. 
+
+### records.css
+Na pasta css crie um arquivo chamado `records.css`. Este arquivo será responsável por dimensionar as tabelas a serem inseridas de forma dinamica com o javascript.
+adicione o seguinte código:
+````
+.records{
+    border-collapse: collapse;
+    flex-direction: column;
+    width: 100%;
+    user-select: none;
+    text-align: left;
+}
+
+.records th{
+    /*text-align: auto;*/
+    height: 45px;
+    background-color: var(--primary-color);
+    padding-left: 100px;
+    font-size: 1.2rem;    
+}
+.records td{
+    /*text-align: auto;*/
+    height: 50px;
+    padding-left: 100px;
+    position: relative;
+}
+
+.records th:last-child,
+.records td:last-child{
+    
+    padding: 0;
+    min-width: 140px;
+    /*text-align: center;*/
+}
+
+.records tr:hover{
+    background-color: var(--secundary-color);
+}
+
+/*configuração para telas pequenas*/
+@media(max-width:800px){
+    
+    .records thead{
+        display:flex;
+        clip:rect(0 0 0 0);
+        height: 85px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        width: 1px;
+    }
+
+    .records tr {      
+        border-bottom: 3px solid rgb(221, 221, 221);
+        display:block;
+        margin-bottom: 0.625rem;
+        padding: 0;
+    }
+
+    .records td{
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 1rem;
+        text-align: right;
+        padding-left: 10px;
+        padding-top: 5%;
+
+    }
+
+    .records td::before{
+        content: attr(data-label);
+        float: left;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        height: 10px;
+        text-align: left;
+            
+    }
+
+    .records th{
+        text-align: left;
+    }
+
+    
+}
+````
+Note que as configurações mobile ficaram dimensionadas diferentemente dos padrões anteriores, isto porque neste ocasião, temos uma tabela que deve ser totalmente redimensionada, poderiamos fazer uso somente do `overflow-x` que é um recurso para permitir a visualização da tabela podendo desliza-la para o lado, como os recursos acima utilizados para visualizar os códigos. Porém isso dificultaria a visualização da tabela inteira, por isso utilizaremos uma forma diferente para exibir no mobile:
+Ao adicionarmos em telas pequenas iremos ocultar a tabela de dados exibida na tela desktop, e exibiremos os dados como lista, e adicionaremos indicadores dos campos como nome, cpf etc.. como uma lista ao lado da nova tabela exibindo as informações da nova tabela.
+Para realizar tal tarefa utilizaremos parametros nas novas tabelas para exibir tal funcionalidade, adicionaremos um `data-label` quando estivermos criando o nosso javascript e assim referenciaremos a exibição da tabela
 
 
