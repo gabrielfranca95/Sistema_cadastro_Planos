@@ -72,5 +72,53 @@ ainda na tag `<body>` acima do codigo adicionado anteriormente insira o seguinte
 ````
 os links referenciados como `rota do seu arquivo/exemplo.html` serão substituídos futuramente pelas suas rotas criadas, onde ao final da linha podemos ver o nome da página ao qual a rota deve se referênciar, cada link será exibido como uma linha referênciando cada página, futuramente abordaremos mais esses aspectos.
 
-Agora iremos criar a tag `<main>` com a tabela padrão a ser exibida quandoa página é carregada
+Agora iremos criar a tag `<main>` com a tabela padrão a ser exibida quandoa página é carregada:
+Ainda dentro da tag `<body>` logo abaixo de todos os codigos inseridos anteriormente, insira o seguinte código:
+````
+    <main>
+    <!--botão cadastrar funcionarios-->
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar </button>
+        <div style="overflow-x:auto;">
+        <!--tabela inicial de dados da tabela para telas maiores-->    
+        <table id="tableClient" class="records">
+            <thead>
+                <tr>
+                    <th data-title="nome">Nome</th>
+                    <th data-title="cpf">cpf</th>
+                    <th data-title="peso">peso</th>
+                    <th data-title="altura">altura</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+        </div>        
+            </tbody>
+        </table>
+        <!--conteúdo da janela modal-->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Cliente</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form id="form" class="modal-form">
+                    
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Cliente"required>
+                    <input type="text" id="cpf"  class="modal-field" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \ placeholder="CPF 123.456.789-01" title="Digite um CPF no formato: 000.000.000-00" required>
+                    <input type="text" id="peso"  class="modal-field" pattern="\d{2}\.\d{1}" \ placeholder="Peso(kg) EX: 62.0 " title="Digite o peso no formato: 00.0" required>
+                    <input type="text" id="altura"  class="modal-field" pattern="\d{1},\d{2}" \ placeholder="Altura(cm) Ex: 1,60" title="Digite a altura no formato: 0,0" required>
+              
+                        
+
+                </form>
+                <footer class="modal-footer">
+                    <!--botão salvar da janela modal-->
+                    <button id="salvar" class="button green">Salvar</button>
+                    <button id="cancelar" class="button blue">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+````    
+    
 
