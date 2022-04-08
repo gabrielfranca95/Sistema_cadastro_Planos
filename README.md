@@ -158,24 +158,125 @@ crie um doctype html e adicione as seguintes rotas que usaremos em nossa aplica�
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 ````    
-Dentro da teg body adicione a classe 
+Sdicione o seguinte código:
+
+````
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- container do topo-->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="openMenu();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">PIPO SAÚDE</span>
+</div>
+
+<!-- menu lateral esquerdo -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s8 w3-bar">
+      <span>Empresas e, <strong>Planos</strong></span><br>
+    </div>
+  </div>
+  <hr>
+
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-hover-black" onclick="closeMenu()" title="close menu"><i class="fa fa-remove fa-fw"></i>Fechar</a>
+    <div class="w3-container w3-blue">
+      <h5>Inicio</h5>
+    </div>
+    <div class="w3-container">
+      <h5>Acme co</h5>
+    </div>
+    <a href="http://127.0.0.1:5501/dentalacme.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Dental Sorriso</a>
+    <a href="http://127.0.0.1:5501/norteeuropa.html" class="w3-bar-item w3-button w3-padding "><i class="fa fa-users fa-fw"></i> Norte Europa</a>
+
+    <hr>
+    <div class="w3-container">
+      <h5>Tio Patinhas</h5>
+    </div>
+    <a href="http://127.0.0.1:5501/dentaltio.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Dental Sorriso</a>
+    <a href="http://127.0.0.1:5501/mentesa.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Mente Sã, Corpo São</a>
+    <a href="http://127.0.0.1:5501/pampulha.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Pampulha intermedica</a>
+
+  </div>
+</nav>
 
 
+<!-- Efeito de sobreposição ao abrir a barra lateral em telas pequenas -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
+<!-- !CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
+  <!-- Header, blocos redicionadores de pagina com icones -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-home"></i> Todos os Planos</b></h5>
+  </header>
+  <div class="w3-row-padding w3-margin-bottom">
+    <div id="dentalt" class="w3-quarter" onclick="window.location='http://127.0.0.1:5501/dentaltio.html';">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h6>Tio Patinhas</h6>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Dental Sorriso</h4>
+      </div>
+    </div>    
+    <div id="dentalac" class="w3-quarter" onclick="window.location='http://127.0.0.1:5501/dentalacme.html';">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-heart w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h6>Acme co</h6>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Dental Sorriso</h4>
+      </div>
+    </div>
+    <div id="norteur" class="w3-quarter" onclick="window.location='http://127.0.0.1:5501/norteeuropa.html';">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h6>Acme co</h6>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Norte Europa</h4>
+      </div>
+    </div>
+    <div id="mentes" class="w3-quarter" onclick="window.location='http://127.0.0.1:5501/mentesa.html';">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-heart w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h6>Tio Patinhas</h6>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Mente Sã, Corpo São</h4>
+      </div>
+    </div>
+    <div id="pa,pulh" class="w3-quarter" style="padding-top: 0.5cm ;" onclick="window.location='http://127.0.0.1:5501/pampulha.html';" >
+      <div class="w3-container w3-teal w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h6>Tio Patinhas</h6>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Pampulha intermedica</h4>
+      </div>
+    </div>
+    
+  </div>
+</body>
+````
 
-
-
-
-
-
-
-
-
-
-
-
-
+No campo comentado como `<!-- menu lateral esquerdo -->` temos as div's de rotas para as páginas subsequentes da aplicação, nos campos referênciados como: 
+````
+a href="http://127.0.0.1:5501/dentalacme.html"
+````
+Lembre-se de adicionar a página para direcionar para as paginas que desejar adicionar.
+Note que há muitas referências, e `id` que usarems para herdas as funções javascript futuramente.
 
 # criando o CSS
  crie uma pasta dentro do repositorio inicial e a nomeie como css, dentro da pasta css crie um arquivo chamado `main.css` e adicione o seguinte código:
