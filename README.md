@@ -857,8 +857,19 @@ Abra o arquivo `dentaltio.html` e adicione as seguintes rotas dentro da tag `<he
 ````
 após isso certifique-se que a rota `scripts` esteja no arquivo `home.html`
 
-após isso informe em sua página `home.html` a rota para sua página `dentaltio.html`
+após isso informe em sua página `home.html` a rota para sua página `dentaltio.html`, esta rota é exibida em seu navegador quando vc carrega a página
+Note que existem rotas slvas, estas rotas devem ser sustituídas pelas suas rotas a serem criadas novas páginas.
+siga o exemplo abaixo:
+````
+          <!--DIGITE SUA ROTA ABAIXO-->
+    <a href="http://SUA ROTA AQUI/dentaltio.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Dental Sorriso</a>
+````
 
+# Adicionando novos planos de saúde
+Ainda não encontrei uma forma de criar planos e adicionalos de forma dinamica e que os mesmos permitam adicionar novos dados dentro de sí de forma dinamica. 
+Então iremos aprender como adicionar inserindo novos arquivos em nossa aplicação;
+
+Para adicionar um novo plano
 
 
 
