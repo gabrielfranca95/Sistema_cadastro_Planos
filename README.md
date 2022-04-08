@@ -120,5 +120,8 @@ Ainda dentro da tag `<body>` logo abaixo de todos os codigos inseridos anteriorm
         </div>
     </main>
 ````    
-    
+Note que neste arquivo temos uma tabela com as informações exibidas na tela do desktop, e tambem temos uma class records, onde futuramente iremos adiciona-la no css.
+Uma div modal, nos passando os parametros da janela modal que é exibida ao clicar em `cadastrar`na aplicação
+Tambem temos um `<form>` que é onde inserimos os imputs solicitados dentro da nossa janela modal
 
+No `<footer>` foi inserido uma class modal que será adicionada ao css e incluímos o botão salva e cancelar da nossa janela modal.
