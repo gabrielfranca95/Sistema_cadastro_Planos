@@ -103,9 +103,9 @@ Ainda dentro da tag `<body>` logo abaixo de todos os codigos inseridos anteriorm
                 </header>
                 <form id="form" class="modal-form">
                     
-                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Cliente"required>
-                    <input type="text" id="cpf"  class="modal-field" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \ placeholder="CPF 123.456.789-01" title="Digite um CPF no formato: 000.000.000-00" required>
-                    <input type="text" id="peso"  class="modal-field" pattern="\d{2}\.\d{1}" \ placeholder="Peso(kg) EX: 62.0 " title="Digite o peso no formato: 00.0" required>
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Cliente">
+                    <input type="text" id="cpf"  class="modal-field" placeholder="CPF 123.456.789-01" >
+                    <input type="text" id="peso"  class="modal-field" pattern="\d{2}\.\d{1}" \ placeholder="Peso(kg) EX: 62.0 " title="Digite o peso no formato: 00.0" >
                     <input type="text" id="altura"  class="modal-field" pattern="\d{1},\d{2}" \ placeholder="Altura(cm) Ex: 1,60" title="Digite a altura no formato: 0,0" required>
               
                         
@@ -128,8 +128,175 @@ No `<footer>` foi inserido uma class modal que será adicionada ao css e incluí
 Após isso abrindo o arquivo em seu navegador iremos nos deparar com uma tela parecida com a tela abaixo:
 ![image](https://user-images.githubusercontent.com/57453192/162367491-0b0c6fe4-6d93-43d1-89ac-1f67cf388758.png)
 
+# validando os dados
+Agora iremos validar os dados dos campos do formulário, para executar tal tarefa iremos exigir que o nosso imput do formulário seja preenchido, fazendo com que assim o usuário não seja capaz de salvar o formulário sem que todos os campos estejam preenchidos
+
+Adicionando o `required` ao final de cada formulário iremos exigir que o campo em questão seja preenchido:
+````
+<input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Cliente"required>
+````
+Sendo assim, será mostrado ao usuário uma mensagem de erro toada vez que o campo não for preênchido. Adicione required em todos os campos input
+
+No campo cpf iremos exigir que o campo além de ser preenchido também tenha um padrão de um cpf, para evitar que o usuário preencha os dados nos campos errados
+Seguindo a mesma lógica, além dos avisos nós iremos solicitar que o padrão de preenchimento do CPF corresponda ao padrão com pontos a cada 3 dígitos e com um traço. para adicionarmos essa funcionalidade adicionaremos um `pattern` informando o padrão dessa forma `\d{3}\.\d{3}\.\d{3}-\d{2}` para exigir o formato do cpf e depois adicionaremos um `title` e informaremos o que desejamos adicionar na mensagem de erro, se não adicionarmos um title a mensagem de erro será padrão, e provavelmente o usiário ficaria confuso ao preencher, pois mesmo adicionando no campo placeholder o padrão exigido, ao começar a digitar o usuário não verá mais a mennsagem
+então iremos adicionar um title com a seguinte mensagem `title="Digite um CPF no formato: 000.000.000-00`
+````
+<input type="text" id="cpf"  class="modal-field" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \ placeholder="CPF 123.456.789-01" title="Digite um CPF no formato: 000.000.000-00" required>
+````
+note que o campo peso e altura já estão preenchidos seguindo o pdrão acimda, e sucessivamente, sendo necessário adicionaremos mais inputs de forma semelhante.
+
+
+
 ## Criando o html da pagina home
 Normalmente damos index.html como nome de arquivo padrão, porém neste caso demos o nome de home para facilitar a inserção da pagina de teste da aplicação aqui no github.
-No mesmo diretório do arquivo criado anteriormente, adicione este segundo arquivo, dê a ele o nome de `home.html`, este será o nosso arquivo padrão, 
+No mesmo diretório do arquivo criado anteriormente, adicione este segundo arquivo, dê a ele o nome de `home.html`, este será o nosso arquivo padrão.
+````
+touch home.html
+````
+crie um doctype html e adicione as seguintes rotas que usaremos em nossa aplicação:
+````
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+````    
+Dentro da teg body adicione a classe 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# criando o CSS
+ crie uma pasta dentro do repositorio inicial e a nomeie como css, dentro da pasta css crie um arquivo chamado `main.css` e adicione o seguinte código:
+````
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #d7f2f8;
+    --secundary-color: rgba(250, 250, 250, 0.945);
+    --shadow-color: rgb(209, 222, 248);
+    --text-color: rgb(183, 220, 255);
+}
+
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'karla', sans-serif;
+    position:relative;
+}
+
+header{
+    background-color: var(--primary-color);
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    box-shadow: 0 1px 2px var(--shadow-color);
+}
+
+.header-title{
+    color: black;
+    font-size: 2rem;
+}
+
+main{
+    flex-grow: 1;
+    display: grid;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 5vh auto;
+    padding: 40px;
+    box-shadow: 2px 2px 10px var(--shadow-color);
+    gap: 20px;
+}
+
+    
+footer{
+    width:100;
+    text-align: center;
+    font-weight: 200;
+    font-style: italic;
+    padding: 20px;
+}
+
+
+````
+Como podemos observar já referenciamos toda a tag main, dando as devidas dimensões para tal.
+
+Agora iremos adicionar as configurações para telas pequenas; Abaixo do código acima insira:
+````
+/*configuração para telas pequenas*/
+@media (max-width:480px){
+    header{
+        display:block;
+        position:absolute;
+        width:100%;
+    }
+    .header-title{
+        font-size: 1.5rem;
+    }
+
+
+    
+}
+````
+como o trecho comentado já diz, essas são as configurações mobile
+
+### criando botões css
+ma pasta css cria um arquivo chamado `button.css` e adicione o seguinte código:
+````
+.button{
+    border-style:none;
+    height: 40px;
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: box-shadow .6s ease;
+}
+
+.button.blue{
+    background-color: #1FB6FF;
+    border-radius: 16px;
+
+}
+
+button.green{
+    background-color: #2fadcc;
+    border-radius: 14px;
+}
+
+button.red{
+    background-color: #60aaf0;
+    border-radius: 14px;
+}
+
+.button:hover{
+    box-shadow: inset 1500px 5px 5px #00000055;
+    
+}
+````
+
 
 
