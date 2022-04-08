@@ -848,6 +848,17 @@ document.getElementById('cancelar')
     .addEventListener('click', closeModal)
 ````    
 
-### 
+### organizando rotas:
+Agora para testar-mos a aplicação, precisamos organizar as rotas
+Abra o arquivo `dentaltio.html` e adicione as seguintes rotas dentro da tag `<head>`:
+````
+    <script src="tiopatinhas/dentaltio.js" defer></script>
+    <script src="scripts.js" defer></script>
+````
+após isso certifique-se que a rota `scripts` esteja no arquivo `home.html`
+
+após isso informe em sua página `home.html` a rota para sua página `dentaltio.html`
+
+
 
 
