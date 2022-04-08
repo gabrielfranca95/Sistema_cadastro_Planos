@@ -523,6 +523,12 @@ adicione o seguinte código:
 ````
 Note que as configurações mobile ficaram dimensionadas diferentemente dos padrões anteriores, isto porque neste ocasião, temos uma tabela que deve ser totalmente redimensionada, poderiamos fazer uso somente do `overflow-x` que é um recurso para permitir a visualização da tabela podendo desliza-la para o lado, como os recursos acima utilizados para visualizar os códigos. Porém isso dificultaria a visualização da tabela inteira, por isso utilizaremos uma forma diferente para exibir no mobile:
 Ao adicionarmos em telas pequenas iremos ocultar a tabela de dados exibida na tela desktop, e exibiremos os dados como lista, e adicionaremos indicadores dos campos como nome, cpf etc.. como uma lista ao lado da nova tabela exibindo as informações da nova tabela.
-Para realizar tal tarefa utilizaremos parametros nas novas tabelas para exibir tal funcionalidade, adicionaremos um `data-label` quando estivermos criando o nosso javascript e assim referenciaremos a exibição da tabela
+Para realizar tal tarefa utilizaremos parametros nas novas tabelas para exibir tal funcionalidade, adicionaremos um `data-label` quando estivermos criando o nosso javascript e assim referenciaremos a exibição da tabela. 
+Exemplo de tabela listada lateralmente:  
+nome      | fulano
+--------- | ------
+cpf       | 123.456.789-58
+peso      | 71.5
+altura    | 1,73
 
-
+# Iniciando Javascript
