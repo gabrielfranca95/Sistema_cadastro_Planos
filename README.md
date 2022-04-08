@@ -1,7 +1,7 @@
 # Sistema cadastro Planos com Javascript 
 ## Aplicação de um painel de planos de saúde e cadastros de clientes com javascript, totalmente responsivo, confira o resultado no link abaixo:
 ## [Teste a aplicação clicando aqui !](https://gabrielfranca95.github.io/Sistema_cadastro_Planos/home)
-#### 
+### Este é um exemplo de visualização desktop
 [<img src="https://user-images.githubusercontent.com/57453192/162351515-6dd0ad1b-24ce-47f9-a1cf-37a8d4e183fd.png" width="500"/>](https://user-images.githubusercontent.com/57453192/162351515-6dd0ad1b-24ce-47f9-a1cf-37a8d4e183fd.png)
 [<img src="https://user-images.githubusercontent.com/57453192/162351545-a7e3fa54-bbde-44fd-99a8-4700cd0a2840.png" width="500"/>](https://user-images.githubusercontent.com/57453192/162351545-a7e3fa54-bbde-44fd-99a8-4700cd0a2840.png)
 ### Este é um exemplo de exibição de tela em um smartphone
