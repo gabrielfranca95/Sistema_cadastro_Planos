@@ -11,7 +11,6 @@
 [<img src="https://user-images.githubusercontent.com/57453192/162351358-7c14bd11-6395-4875-be17-84f60bf6d20d.png" width="240"/>](https://user-images.githubusercontent.com/57453192/162351358-7c14bd11-6395-4875-be17-84f60bf6d20d.png)
 ### A aplicação permite a inserção de novos usuários nos planos de saúde baseando-se nas informações solicitatas por cada plano como mostra a imagem acima.
 Utilizando html, css, e javascript para criação da aplicação e utilizando localstorage para persistência dos dados.
-Utilizando node.js, Express para ciração do servidor local, mongodb como banco de dados e solicitando a biblioteca mongoose, e utilizando react com adminBro.
 ## Requisitos:
 ````
 os requisitos para rodar a aplicação são minimos, pois a aplicação não faz uso de frameworks ou bibliotecas externas com exigência de processamento, utilizei uma máquina windows 10 e o editor de códigos vs code.
@@ -531,4 +530,71 @@ cpf       | 123.456.789-58
 peso      | 71.5
 altura    | 1,73
 
+### rotas css
+ agroa na tag `<head>` adicione as seguintes rotas:
+ ````
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+````    
+essas rotas possibilitarão os arquivos css serem herdados pelo html, ao recarregar a pagina `dentaltio.html` você verá algo parecido com isso:
+![image](https://user-images.githubusercontent.com/57453192/162456929-b2193b39-a2a6-4fab-89f0-920cc79b8b8b.png)
+
+
 # Iniciando Javascript
+Iremos iniciar o javascript com as funcções de abrir as janelas de menu das páginas `dentaltio.html` e `home.html`.
+crie um arquivo no diretório com o nome de `scripts.js` e adicione as seguintes funções:
+````
+        function myFunction() {
+          var x = document.getElementById("myGrid");
+          if (x.className === "w3-row") {
+            x.className = "w3-row-padding";
+          } else { 
+            x.className = x.className.replace("w3-row-padding", "w3-row");
+          }
+        }
+        
+        // função para abrir e fechar o menu
+        function w3_open() {
+          document.getElementById("mySidebar").style.width = "100%";
+          document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+        }
+````
+A função Myfunction é responsavel por exibir o menu lateral da página `dentaltio`, a função `w3_open()` repassará o css o tornando visivel e a função `w3_close()` fechará a barra lateral.
+
+Agora iremos adicionar a função para acionar a menu da página home
+adicione o seguinte código:
+````
+// função para exibir barra lateral home
+var mySidebar = document.getElementById("mySidebar");
+
+// efeito overley
+var overlayBg = document.getElementById("myOverlay");
+
+
+// Alternar entre mostrar e ocultar a barra lateral 
+
+function openMenu() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+      overlayBg.style.display = "none";
+    } else {
+      mySidebar.style.display = 'block';
+      overlayBg.style.display = "block";
+    }
+  }
+  
+  // botão para feche a barra lateral 
+  function closeMenu() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+  }
+````
+Semelhante a função anterior, as funçoes `openMenu` e `closeMenu` são responsáveis por abrir e fechar o menu lateral da página home.
+
+## Criando js do painel de usuários, 
