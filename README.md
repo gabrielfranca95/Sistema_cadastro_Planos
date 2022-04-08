@@ -126,5 +126,10 @@ Tambem temos um `<form>` que é onde inserimos os imputs solicitados dentro da n
 
 No `<footer>` foi inserido uma class modal que será adicionada ao css e incluímos o botão salva e cancelar da nossa janela modal.
 Após isso abrindo o arquivo em seu navegador iremos nos deparar com uma tela parecida com a tela abaixo:
-![image](https://user-images.githubusercontent.com/57453192/162367331-1da74788-e4c8-4921-a1e9-ecef9e8fd1e1.png)
+![image](https://user-images.githubusercontent.com/57453192/162367491-0b0c6fe4-6d93-43d1-89ac-1f67cf388758.png)
+
+## Criando o html da pagina home
+Normalmente damos index.html como nome de arquivo padrão, porém neste caso demos o nome de home para facilitar a inserção da pagina de teste da aplicação aqui no github.
+No mesmo diretório do arquivo criado anteriormente, adicione este segundo arquivo, dê a ele o nome de `home.html`, este será o nosso arquivo padrão, 
+
 
