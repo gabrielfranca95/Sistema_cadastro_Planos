@@ -125,3 +125,6 @@ Uma div modal, nos passando os parametros da janela modal que é exibida ao clic
 Tambem temos um `<form>` que é onde inserimos os imputs solicitados dentro da nossa janela modal
 
 No `<footer>` foi inserido uma class modal que será adicionada ao css e incluímos o botão salva e cancelar da nossa janela modal.
+Após isso abrindo o arquivo em seu navegador iremos nos deparar com uma tela parecida com a tela abaixo:
+![image](https://user-images.githubusercontent.com/57453192/162367331-1da74788-e4c8-4921-a1e9-ecef9e8fd1e1.png)
+
