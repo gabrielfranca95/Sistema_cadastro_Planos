@@ -710,19 +710,25 @@ const closeModal = () => {
     clearFields()
     document.getElementById('modal').classList.remove('active')
 }
+
 ````
 este código é responsável por ativar a exibição da janela modal.
 
-Agora iremos repassar os dados do JSON para o localstorage, vamos utilizar a segunte linha lógica, os dados informados no form do campo modal, serão passado para um JSON e enviados para o localstorage.
 
-adicione o codigo a seguir logo abaixo do código anterior:
+
+
+adicione o codigo:
 ````
-
 // repassa dados JSON para localstorage 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_clientdentaltio')) ?? []
 const setLocalStorage = (dbClientdentaltio) => localStorage.setItem("db_clientdentaltio", JSON.stringify(dbClientdentaltio))
 
 
+````
+as duas const's enviam e recebem dados do JSON para o localStorage, permitindo que assim os dados se tornem persistentes.
+
+Logo abaixo do codigo acima insira:
+````
 
 //inserindo editando e apagando clientes do localstorage
 const deleteClient = (index) => {
@@ -779,8 +785,11 @@ const saveClient = () => {
     }
 }
 
+````
+O trcho acima irá criar, ler e enviar e editar os dados para o JSON, que fará o updade da tabela.
 
-
+Agora iremos inserir a tabela dinamica que será exibida no nosso html, adicione o seguinte código:
+````
 // Tabela a ser inserida no html ao prencher os dados da modal
 const createRow = (client, index) => {
     const newRow = document.createElement('tr')
@@ -796,35 +805,11 @@ const createRow = (client, index) => {
     `
     document.querySelector('#tableClient>tbody').appendChild(newRow)
 }
+````
+Note que nas tags `<td>` nó temos o `data-label` informado anteriormente, o trecho informado nele será passado para a tabela mobile, por isso o mesmo deve seguir o padrão da tabela anterior exibida no html.
 
-//Limpar tabela inserida
-const clearTable = () => {
-    const rows = document.querySelectorAll('#tableClient>tbody tr')
-    rows.forEach(row => row.parentNode.removeChild(row))
-}
-
-const updateTable = () => {
-    const dbClientdentaltio = readClient()
-    clearTable()
-    dbClientdentaltio.forEach(createRow)
-}
-
-const fillFields = (client) => {
-    document.getElementById('nome').value = client.nome
-    document.getElementById('cpf').value = client.cpf
-    document.getElementById('peso').value = client.peso
-    document.getElementById('altura').value = client.altura
-    document.getElementById('nome').dataset.index = client.index
-}
-
-const editClient = (index) => {
-    const client = readClient()[index]
-    client.index = index
-    fillFields(client)
-    openModal()
-}
-
-
+Agora iremos adicionar um alerta para o ùsuario quando o mesmo tentar excluír uma tabela, evitando possíveis acidentes, adicione o seguinte código:
+````
 //ação de deletar e alerta condicional de exclusão de novo funcionário
 const editDelete = (event) => {
     if (event.target.type == 'button') {
@@ -843,10 +828,10 @@ const editDelete = (event) => {
         }
     }
 }
+````
 
-// ações de click para abrir, fechar, salvar e deletar 
-updateTable()
-
+E por fim adicionaremos o evento ao clicar em um botão:
+````
 document.getElementById('cadastrarCliente')
     .addEventListener('click', openModal)
 
@@ -861,7 +846,8 @@ document.querySelector('#tableClient>tbody')
 
 document.getElementById('cancelar')
     .addEventListener('click', closeModal)
+````    
 
-````
+### 
 
 
