@@ -865,11 +865,39 @@ siga o exemplo abaixo:
     <a href="http://SUA ROTA AQUI/dentaltio.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Dental Sorriso</a>
 ````
 
+
+
+
+
 # Adicionando novos planos de saúde
-Ainda não encontrei uma forma de criar planos e adicionalos de forma dinamica e que os mesmos permitam adicionar novos dados dentro de sí de forma dinamica. 
-Então iremos aprender como adicionar inserindo novos arquivos em nossa aplicação;
+Ainda não encontrei uma forma de conciliar novos planos inseridos de forma dinamica, pois tenho encontrado conflitos relacionais ao adicionar novas tabelas dinamicas no html. Venho utilizando o `innerHtml` para adicionar uma nova tabela com um botão referênciado para adicionar novos usuários criando uma nova tabela para o plano, todo o funcionamento veio repondendo bem aos testes, porém ao adicionar um novo plano, o mesmo se relacionava com o plano antigo causando conflitos tais como: A tabela filho não ser exibida em conjunto com a tabela pai, mesmo uma sendo inserida e referênciada a outra, e um outro problema encontrado é definir uma validação mais especifica, uma vez que não se sabe qual dado o usuário pretende solicitar no input de seu novo plano, dificultando a logica de validação para o novo plano criado, uma vez que os dados podem ser cpf, data, e-mail, pensei em criar algo como uma `key` para o imput de cada um desses dados específicos e dar a opção para o usuário solicitar, porém é algo que precisa ser feito após o processo de inclusão dinamica de planos estar operacional.
 
-Para adicionar um novo plano
+Então iremos aprender como adicionar novos planos de forma manual:
 
+Para adicionar um novo plano basta criarmos um novo arquivo html, onde repassaremos os dados do nosso arquivo `dentaltio.html` e substituíremos as informações pelas informações do nosso novo plano. Tais como; Título, e referência ao js nas tags da pagina.
+
+criaremos um arquivo js como o anterior `dentaltio.js` e substituíremos o nosso localstorage para não haver conflitos relacionais segue abico um exemplo de como fica o nosso novo arquivo para localstorage onde os campos `NOVO_LOCALSTORAGE` e `NOVOLOCALSTORAGE` devem ser substituídos pelo seu novo db local storage, confira o exemplo:
+
+````
+// repassa dados JSON para localstorage 
+const getLocalStorage = () => JSON.parse(localStorage.getItem('NOVO_LOCALSTORAGE')) ?? []
+const setLocalStorage = (NOVOLOCALSTORAGE) => localStorage.setItem("NOVO_LOCALSTORAGE", JSON.stringify(NOVOLOCALSTORAGE))
+
+
+````
+Após ter feito isso, certifique-se de ter configurado as rotas para as páginas e certifique-se de que seu novo plano html chame somente a página js referente a mesma, p
+
+# Crinado novas empresas
+Para criar novas empresas iremos ao arquivo `home.html` e no trecho comentado como `<!-- menu lateral esquerdo -->
+` e observe as empresas já adicionadas como no exemplo abaixo:
+````
+    <div class="w3-container">
+      <h5>Tio Patinhas</h5>
+    </div>
+    <a href="http://127.0.0.1:5501/dentaltio.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Dental Sorriso</a>
+    <a href="http://127.0.0.1:5501/mentesa.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Mente Sã, Corpo São</a>
+    <a href="http://127.0.0.1:5501/pampulha.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Pampulha intermedica</a>
+````
+onde tio patinhas é o título e temos os link de referência para a página e ao final da linha temos os nomes das página exibidos na página, sendo assim para adicionar uma empresa no menu lateral indique o nome na <div> e adicione o link da pagina e nome ao final de cada tag `<a href=`, feito isso a nova empresa será exibida no menu lateral juntamento com os novos planos. 
 
 
