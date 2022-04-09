@@ -1,4 +1,4 @@
-# Sistema cadastro Planos com Javascript 
+# Sistema cadastro Planos com Javascript, HTML, CSS e armazenamento no localStorage 
 ### Aplicação de um painel de planos de saúde e cadastros de clientes com html, css, e javascript, com validação de campos e dados preenchidos. Totalmente responsivo, confira o resultado no link abaixo:
 ## [Teste a aplicação clicando aqui !](https://gabrielfranca95.github.io/Sistema_cadastro_Planos/home)
 ### Este é um exemplo de visualização desktop
