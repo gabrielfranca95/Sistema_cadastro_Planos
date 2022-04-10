@@ -900,4 +900,19 @@ Para criar novas empresas iremos ao arquivo `home.html` e no trecho comentado co
 ````
 onde tio patinhas é o título e temos os link de referência para a página e ao final da linha temos os nomes das página exibidos na página, sendo assim para adicionar uma empresa no menu lateral indique o nome na <div> e adicione o link da pagina e nome ao final de cada tag `<a href=`, feito isso a nova empresa será exibida no menu lateral juntamento com os novos planos. 
 
-
+Para que os planos sejam exibidos no menu direito da página home, procure pelo trecho de código comentado como   `<!-- Header, blocos redicionadores de pagina com icones -->` Observe que cada `div` é uma empresa como no exemplo abaixo:
+    
+````
+  <div class="w3-row-padding w3-margin-bottom">
+    <div id="dentalt" class="w3-quarter" onclick="window.location='http://127.0.0.1:5501/dentaltio.html';">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h6>Tio Patinhas</h6>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Dental Sorriso</h4>
+      </div>
+    </div>    
+````
+      Substitua os campos por entitulados indicando o plano e empresa e adicione a rota para página do plano.
