@@ -917,4 +917,5 @@ Para que os planos sejam exibidos no menu direito da página home, procure pelo 
       
       
  Substitua os campos entitulados indicando o plano e empresa que você deseja criar e adicione a rota para a página do seu novo plano.
+      Feito isso, sua aplicação será capaz de levar e trazer o useário entre as páginas, através das rotas.
  
